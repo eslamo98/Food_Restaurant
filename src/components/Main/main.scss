@@ -1,0 +1,119 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+main {
+    height: 100vh;
+    & .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+        bottom: 50px;
+    }
+}
+
+.slide {
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // align-items: center;
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 0 .5rem;
+    cursor: grab;
+    
+}
+
+.slide_1 {
+    background-position:  100% 50%;
+    margin-left: auto;
+}
+
+.slide_1 .slide-content,
+.slide_3 .slide-content {
+    margin-left: auto;
+    margin-bottom: 1rem;
+}
+.slide_2 {
+    background-position:  0% 50%
+}
+
+.slide_3 {
+    background-position:  100% 50%
+}
+
+
+.slide-content {
+    
+    // width: 500px;
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+ .slide_title {
+    display: block;
+    font-size: 2.8rem;
+    margin-bottom: -10px;
+}
+
+ .slide_name {
+    display: block;
+    font-size: 4rem;
+    color: $primary_color;
+    font-weight: 700;
+    margin-block: 0.7rem;
+}
+
+.slide-details {
+    line-height: 2rem;
+}
+
+.custom-btn {
+    @include transition(0.3s, linear);
+    margin-block: 0.5rem;
+    padding: 12px 28px;
+    border: none;
+    font-size: 1.3rem;
+    background-color: $secondary_color;
+    cursor: pointer;
+    width: fit-content;
+    color: $white;
+    border-radius: 8px;
+    &:hover {
+
+        letter-spacing: 1px;
+        background-color: $primary_color;
+    }
+}
+
+.main-img {
+    img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 940px) {
+    main {
+        height: auto;
+    }
+    .slide {
+        grid-template-columns: 1fr;
+        padding: 0 1.5rem;
+        gap: 1rem;
+        height: auto;
+        .slide_title {
+            font-size: 1.8rem;
+        }
+
+        .slide_name {
+            font-size: 2rem;
+        }
+        .slide-details {
+            line-height: 1.5rem;
+        }
+    }
+
+    .main-img {
+        max-width: 600px;
+    }
+}
+

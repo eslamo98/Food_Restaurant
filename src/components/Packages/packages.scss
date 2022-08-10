@@ -1,0 +1,156 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.packages {
+    background: #eee;
+    padding: 5rem 9%;
+}
+
+.our-dishes {
+    color: $primary_color;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    display: block;
+}
+.package-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.packages-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.package {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    background: $white;
+    border-radius: 10px;
+    border: 2px solid #000;
+    align-items: center;
+    text-align: center;
+    transition: 0.3s linear;
+    // max-width: 355px;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        .see-package {
+            left: 15px;
+        }
+
+        .love-package {
+            right: 15px;
+        }
+    }
+}
+
+.see-package,.love-package {
+    position: absolute;
+    top: 20px;
+    font-size: 1.4rem;
+    width: 45px;
+    height: 45px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $secondary_color;
+    @include transition(0.3s, linear);
+    border-radius: 50%;
+    cursor: pointer;
+    &:hover {
+        color: $primary_color;
+    }
+}
+
+.see-package {
+    left: -70px;
+}
+
+.love-package {
+    right: -70px;
+}
+
+.package:hover {
+    background: $secondary_color;
+    color: $white;
+    
+    .package-name {
+        color: $primary_color !important;
+    }
+
+    .package-btn {
+        color: #000;
+    }
+}
+
+.package img {
+    // width: 100%;
+    height: 170px;
+    border-radius: 10px;
+}
+
+.package-name {
+    font-size: 1.5rem;
+    margin-block: 0.6rem;
+    font-weight: 700;
+    color: $secondary_color;
+    @include transition(0.3s,linear);
+}
+
+.package-details {
+    font-size: 0.9rem;
+}
+
+.package-rating {
+    margin-block: 0.7rem;
+}
+
+.package-price {
+    font-size: 1.1rem;
+    margin-block: 0.6rem;
+    color: $primary_color;
+}
+
+.package-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding-block: 0.8rem;
+    transition: 0.3s linear;
+    font-weight: 400;
+}
+
+.package:hover .package-btn {
+    border-color: $white;
+    background: $white;
+}
+
+.package-btn:hover {
+    color: #000;
+}
+
+
+
+@media (max-width: 1046px) {
+    .packages-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 740px) {
+    .packages-container {
+        grid-template-columns: 400px;
+        justify-content: center;
+
+    }
+}

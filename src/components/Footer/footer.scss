@@ -1,0 +1,73 @@
+@import "../variables.scss";
+
+footer {
+    background-position: center center;
+    color: #000;
+    background-attachment: fixed;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.footer-links-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.quick-links-list li {
+    display: flex;
+}
+.quick-links-list a {
+    transition: 0.2s linear;
+    color: #000;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 0.8rem 0;
+}
+
+.quick-links-list a:hover {
+    color: $primary_color;
+}
+
+.footer-icon {
+    color: $primary_color;
+    margin-right: 0.5rem;
+}
+
+.data {
+    transition: 0.2s linear;
+}
+
+.quick-links-list a:hover  .data {
+    padding-left: 15px;
+}
+
+.copy {
+    display: block;
+    width: 100%;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.my-name {
+    color: $primary_color;
+}
+
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .quick-links {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
