@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShippingFast, faDollarSign, faHeadset } from '@fortawesome/free-solid-svg-icons'
-
+import img from "./about-img.png";
 import "./about.scss";
 const About = ({windowSize}) => {
   return (
@@ -13,7 +13,7 @@ const About = ({windowSize}) => {
         </h2>
         <div className="about-container">
             <div className="about-img">
-                <img src="images/about-img.png" alt="" />
+                <img src={img} alt="about" />
             </div>
             <div className="about-details">
                 <span className="about-details-heading">

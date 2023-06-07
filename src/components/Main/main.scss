@@ -57,7 +57,7 @@ main {
 
  .slide_name {
     display: block;
-    font-size: 4rem;
+    font-size: 2rem;
     color: $primary_color;
     font-weight: 700;
     margin-block: 0.7rem;
@@ -87,7 +87,9 @@ main {
 
 .main-img {
     img {
-        width: 100%;
+        width: 80%;
+        float: right;
+        border-radius: 140px;
     }
 }
 

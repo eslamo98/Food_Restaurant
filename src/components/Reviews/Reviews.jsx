@@ -1,9 +1,11 @@
 import React, {useEffect} from 'react'
 import Review from "./Review";
 import { Pagination } from 'swiper';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import img1 from "./images/pic-1.png";
+import img2 from "./images/pic-2.png";
+import img3 from "./images/pic-3.png";
+import img4 from "./images/pic-4.png";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -41,16 +43,16 @@ const Reviews = ({windowSize}) => {
 
         >
             <SwiperSlide>
-                <Review image="images/pic-1.png"/>
+                <Review image={img1}/>
             </SwiperSlide>
             <SwiperSlide>
-                <Review image="images/pic-2.png"/>
+                <Review image={img2}/>
             </SwiperSlide>
             <SwiperSlide>
-                <Review image="images/pic-3.png"/>
+                <Review image={img3}/>
             </SwiperSlide>
             <SwiperSlide>
-                <Review image="images/pic-4.png"/>
+                <Review image={img4}/>
             </SwiperSlide>
         </Swiper>
     </section>

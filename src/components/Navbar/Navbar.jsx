@@ -1,17 +1,21 @@
-import React, {useEffect} from 'react'
-import "./navbar.scss"
+import React, {useEffect, useContext} from 'react';
+import { context } from '../../global';
+import "./navbar.scss";
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUtensils,faShoppingCart,faSearch,faTimes, faBars, faHeart } from '@fortawesome/free-solid-svg-icons'
 const Navbar = ({windowSize, setWindowSize}) => {
+    const { setUserInput} = useContext(context);
 
     const [search, setSearch] = React.useState("");
     const [pageOffset, setPageOffset] = React.useState(window.pageYOffset);
     
-    
     const handleSearch = (e) => {
         e.preventDefault();
-        console.log(search)
+        setUserInput(search);
+        hideSearchForm();
+        document.getElementById("link").click();
     }
     const showSearchForm = () => {
         document.querySelector(".search-form").classList.add("down")
@@ -45,12 +49,12 @@ const Navbar = ({windowSize, setWindowSize}) => {
         return (
             <div className="nav-links">
                 <ul className="list-links">
-                    <li><a href="#main">Home</a></li>
-                    <li><a href="#shop">Dishes</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#dishes">Menu</a></li>
-                    <li><a href="#Reviews">Reviews</a></li>
-                    <li><a href="#orderForm">Order</a></li>
+                    <li><a href="/Food_Restaurant#main">Home</a></li>
+                    <li><a href="/Food_Restaurant#shop">Dishes</a></li>
+                    <li><a href="/Food_Restaurant#about">About</a></li>
+                    <li><a href="/Food_Restaurant#dishes">Menu</a></li>
+                    <li><a href="/Food_Restaurant#Reviews">Reviews</a></li>
+                    <li><a href="/Food_Restaurant#orderForm">Order</a></li>
                 </ul>
             </div>
         )
@@ -59,6 +63,7 @@ const Navbar = ({windowSize, setWindowSize}) => {
     const SmallLinks = () => {
         return (
             <div className="nav-links">
+                
                 <div className="menu-icon" onClick={showSmallLinks}>
                     <div><FontAwesomeIcon icon={faBars} /></div>
                 </div>
@@ -67,12 +72,12 @@ const Navbar = ({windowSize, setWindowSize}) => {
                         <button><FontAwesomeIcon icon={faTimes} /></button>
                     </div>
                     <ul className="list-small-links">
-                        <li><a href="#main">Home</a></li>
-                        <li><a href="#shop">Dishes</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#dishes">Menu</a></li>
-                        <li><a href="#Reviews">Reviews</a></li>
-                        <li><a href="#orderForm">Order</a></li>
+                        <li><a href="/Food_Restaurant#main">Home</a></li>
+                        <li><a href="/Food_Restaurant#about">About</a></li>
+                        <li><a href="/Food_Restaurant#shop">Dishes</a></li>
+                        <li><a href="/Food_Restaurant#dishes">Menu</a></li>
+                        <li><a href="/Food_Restaurant#Reviews">Reviews</a></li>
+                        <li><a href="/Food_Restaurant#orderForm">Order</a></li>
                     </ul>
                 </div>
             </div>
@@ -93,7 +98,7 @@ const Navbar = ({windowSize, setWindowSize}) => {
                         onChange={(e)=>{setSearch(e.target.value)}} 
                         type="text" 
                         name='search' 
-                        placeholder='search here'
+                        placeholder='search with first letter or main ingrediant'
                         value={search}
                         />
                         <button type='submit'><FontAwesomeIcon className='search-icon' icon={faSearch} /></button>

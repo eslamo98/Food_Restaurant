@@ -1,0 +1,103 @@
+@import "../mixins.scss";
+@import "../variables.scss";
+
+.about-us {
+    padding: 5rem 9%;
+}
+
+.our-dishes {
+    color: $primary_color;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    display: block;
+    margin-top: 5rem;
+}
+.about-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.about-container {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+
+    .about-img {
+        flex: 1 1 40rem;
+        
+        img {
+            width: 100%;
+        }
+    }
+
+    .about-details {
+        flex: 1 1 45rem;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.how-to-make {
+    color: $primary_color;
+    margin: 10px 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+
+.about-ingrednts {
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    @media (max-width: 1200px) {
+        grid-template-columns: repeat(4, 1fr);
+
+    }
+
+    @media (max-width: 700px) {
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    @media (max-width: 500px) {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+    gap: 0.5rem;
+    & > span {
+        background: #eee;
+        border-radius: 0.5rem;
+        border: 0.1rem solid rgba(0,0,0,.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        flex: 1 1 17rem;
+        padding: 0.7rem 1rem;
+        color: $primary_color;
+        font-size: 1.5rem;
+
+        span {
+            color: #000;
+            font-size: 1rem;
+        }
+    }
+}
+@media (max-width: 940px) {
+    .about-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        .about-img {
+            flex: 1 1 22rem;
+            max-width: 600px;
+        }
+
+        .about-details {
+            flex: 1 1 22rem;
+            max-width: 600px;
+        }
+    }
+}

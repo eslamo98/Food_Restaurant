@@ -6,3 +6,4 @@ export { default as Dishes } from './Dishes/Dishes';
 export { default as Reviews } from './Reviews/Reviews';
 export { default as OrderForm } from './OrderForm/OrderForm';
 export { default as Footer } from './Footer/Footer';
+export { default as Home } from './Home/Home';
