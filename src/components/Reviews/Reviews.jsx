@@ -9,7 +9,8 @@ import img4 from "./images/pic-4.png";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-import "./reviews.scss"
+import "./reviews.scss";
+
 const Reviews = ({windowSize}) => {
     const [numOfReviews, setNumOfReviews]=React.useState(3);
   

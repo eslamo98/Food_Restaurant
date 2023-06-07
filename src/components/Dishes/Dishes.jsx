@@ -11,6 +11,7 @@ import img8 from './images/menu-8.jpg';
 import img9 from './images/menu-9.jpg';
 import Dish from "./Dish";
 const Dishes = ({windowSize}) => {
+  
   return (
     <section id='dishes' className='dishes' style={{padding: windowSize > 1200 ? "5rem 9%" : "5rem 1rem"}}>
       <span className="our-dishes">Our Menu</span>

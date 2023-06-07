@@ -2,7 +2,6 @@ import React, {useEffect, useContext} from 'react';
 import { context } from '../../global';
 import "./navbar.scss";
 
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUtensils,faShoppingCart,faSearch,faTimes, faBars, faHeart } from '@fortawesome/free-solid-svg-icons'
 const Navbar = ({windowSize, setWindowSize}) => {

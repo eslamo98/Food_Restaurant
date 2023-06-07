@@ -2,6 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuoteRight,faStar,faStarHalfAlt } from '@fortawesome/free-solid-svg-icons'
 
+
 const Review = ({image}) => {
   return (
     <div className='review'>

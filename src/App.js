@@ -6,6 +6,7 @@ import { context } from "./global";
 import "./App.scss"
 import Results from './components/Results/Results';
 
+
 function App() {
   const { state, userInput } = useContext(context);
   const [windowSize, setWindowSize] = React.useState(window.innerWidth);

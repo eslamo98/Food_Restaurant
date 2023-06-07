@@ -10,4 +10,5 @@ const Global = ({children}) => {
   )
 }
 
+
 export default Global

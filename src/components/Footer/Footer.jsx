@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone,faEnvelope,faMap} from '@fortawesome/free-solid-svg-icons'
 import {faFacebookF, faTwitter, faInstagram, faLinkedinIn, faGithub} from "@fortawesome/free-brands-svg-icons";
 
+
 const Footer = ({windowSize}) => {
   return (
     <footer style={{padding: windowSize > 1200 ? "5rem 9%" : "5rem 1rem"}}>

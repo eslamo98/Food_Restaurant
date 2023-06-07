@@ -9,6 +9,7 @@ const About = ({windowSize}) => {
     style={{padding: windowSize > 1200 ? "5rem 9% 5rem 9%" : "5rem 1rem 5rem 1rem"}}>
         <span className="our-dishes">About Us</span>
         <h2 className='about-heading'>
+            
         WHY CHOOSE US?
         </h2>
         <div className="about-container">

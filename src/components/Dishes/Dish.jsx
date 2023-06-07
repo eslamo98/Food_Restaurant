@@ -8,6 +8,7 @@ const Dish = ({image}) => {
         <a href='#' className="love-dish">
           <FontAwesomeIcon icon={faHeart} />
         </a>
+        
         <div className="dish-img">
         <img src={image} alt="image" />
         </div>

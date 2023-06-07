@@ -7,6 +7,7 @@ import img4 from "./images/dish-4.png";
 import img5 from "./images/dish-5.png";
 import img6 from "./images/dish-6.png";
 import Package from "./Package";
+
 const Packages = ({windowSize}) => {
   return (
     <section id='shop' className='packages' style={{padding: windowSize > 1200 ? "5rem 9%" : "5rem 1rem"}}>

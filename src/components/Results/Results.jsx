@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from 'react-router-dom';
 import {context} from "../../global";
 
+
 import './result.scss';
 import Loader from '../Loader/Loader';
 

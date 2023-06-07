@@ -11,6 +11,7 @@ import 'swiper/css/pagination';
 import "./main.scss"
 
 
+
 const Main = ({windowSize, setWindowSize}) => {
     const { state, setState } = useContext(context);
 

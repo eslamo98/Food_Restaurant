@@ -3,6 +3,7 @@ import Loader from '../Loader/Loader';
 import axios from 'axios';
 import "./about.scss";
 
+
 const MealDetails = ({id, windowSize}) => {
     const [meal, setMeal] = useState({});
 

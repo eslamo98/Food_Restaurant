@@ -15,6 +15,7 @@ const Home = ({windowSize, setWindowSize}) => {
         <Dishes windowSize={windowSize} />
         <Reviews windowSize={windowSize} />
         <OrderForm />
+        
     </>
   )
 }
