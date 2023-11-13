@@ -1,4 +1,5 @@
-import React from 'react';
+import {useEffect, useState} from 'react';
+import axios from 'axios';
 import "./dishes.scss";
 import img1 from './images/menu-1.jpg';
 import img2 from './images/menu-2.jpg';
@@ -10,8 +11,22 @@ import img7 from './images/menu-7.jpg';
 import img8 from './images/menu-8.jpg';
 import img9 from './images/menu-9.jpg';
 import Dish from "./Dish";
+import Loader from '../Loader/Loader';
+
 const Dishes = ({windowSize}) => {
+  const [popMeals, setPopMeals] = useState([]);
+
+  useEffect(()=>{
+    axios.get('https://www.themealdb.com/api/json/v1/1/search.php?f=c')
+  .then(response => {
+    console.log(response.data.meals)
+    setPopMeals(response.data.meals.slice(0, 9))
+})
   
+  .catch(error => console.log('error', error));
+},[]);
+
+
   return (
     <section id='dishes' className='dishes' style={{padding: windowSize > 1200 ? "5rem 9%" : "5rem 1rem"}}>
       <span className="our-dishes">Our Menu</span>
@@ -19,15 +34,9 @@ const Dishes = ({windowSize}) => {
           TODAY'S SPECIALITY
         </h2>
         <div className="dishes-container">
-            <Dish image={img1}/>
-            <Dish image={img2}/>
-            <Dish image={img3}/>
-            <Dish image={img4}/>
-            <Dish image={img5}/>
-            <Dish image={img6}/>
-            <Dish image={img7}/>
-            <Dish image={img8}/>
-            <Dish image={img9}/>
+        {popMeals.length == 0 ? <div style={{margin: "atuo"}}><Loader /></div> : popMeals.map(meal => (
+            <Dish key={meal.idMeal} image={meal.strMealThumb} meal={meal}/>
+          ))}
         </div>
     </section>
   )
