@@ -1,14 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import Loader from '../Loader/Loader';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 import "./about.scss";
 
 
 const MealDetails = ({id, windowSize}) => {
     const [meal, setMeal] = useState({});
-
+    const {mealId} = useParams();
     useEffect(()=>{
-      axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`).then(res=>{
+      axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`).then(res=>{
         setMeal(res.data.meals[0])
         console.log(res.data.meals[0]);
       });
